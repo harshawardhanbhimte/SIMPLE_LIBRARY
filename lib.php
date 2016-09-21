@@ -1,7 +1,7 @@
 <?php
 	$dbhost="127.0.0.1";
 	$dbuser='root';
-	$dbpass='dbpass';
+	$dbpass='harsh11';
 	$conn=mysql_connect($dbhost,$dbuser,$dbpass);
 	//print_r($conn);
 	if(!$conn)
@@ -30,7 +30,7 @@
 				//$sql="SELECT * FROM BOOKS;";
 				echo $sql;
 				$res=mysql_query($sql);
-				print_r(mysql_fetch_assoc($res));
+				//print_r(mysql_fetch_assoc($res));
 				//print_r($res);
 
 			}
@@ -49,15 +49,15 @@
 		}
 		if ($res['INSTOCK']==true) {
 				
-
+				
 				echo "your book has been reserverd!!!";
 
-				$sql="UPDATE BOOKS SET INSTOCK=FALSE WHERE BID=".$book;
+				$sql="UPDATE BOOKS SET INSTOCK=FALSE, SID=".$enumber." WHERE BID=".$book;
 				//echo $sql;
 
 				mysql_query($sql);
 
-				//$sql="UPDATE STUDENTS SET BID=".$book." WHERE SID=".$enumber;
+				$sql="UPDATE STUDENTS SET BID=".$book." WHERE SID=".$enumber;
 				$sql="SELECT BID FROM STUDENTS WHERE SID=".$enumber.";";
 				$res=mysql_query($sql);
 				$result=mysql_fetch_assoc($res);
@@ -92,6 +92,7 @@
 		$book_name=$_POST['book_name'];
 		$username=$_POST['username'];
 		findbook($enumber,$book,$book_name,$username);
+
 		//addentries()
 	}
 
