@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		LIBRARY
+	</title>
+	<script type="text/javascript">
+	function color () {
+		// body...
+		node=document.getElementById('sub');
+		node.style.color="green";
+	}
+	</script>
+	<style type="text/css">
+		div{position: absolute;left: 300px;top: 200px;height: 109px;width: 500px;background-color: transparent;border: 1px solid;padding: 100px;padding-top: 50px;}
+		input{position: absolute;height: 27px;color:green;font-size: 26px;vertical-align: top;text-align: left;display: inline-block;right: 20px;background-color: transparent;}
+		span{font-family: sans-serif;position: relative;padding-right: 5px;font-size: 30px;color: gray;}
+		body{background-image:url("stack_of_books.jpg"); ;}
+		#sub{color:"gray";position: absolute;left: 300px;bottom: 20px; height: 40px;}
+	</style>
+</head>
+<body>
+	<!--<img src="stack_of_books.jpg" width="90%" height="50%">-->
+		<div>
+			<form method="POST" action="lib.php" name="details">
+				<span>Name</span><input type="text" name="username" autofocus required><br>
+				<span>Enrollment Number</span><input type="text" name="enumber" required><br>
+				<span>book title</span><input type="text" name="book_name" required><br>
+				<span>bookID</span><input type="text" name="book" required><br>
+				<input id="sub" type="submit" value="search" onclick="color();">
+			</form>
+		</div>
+		
+</body>
+</html>
